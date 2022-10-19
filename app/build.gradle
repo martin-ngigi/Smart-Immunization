@@ -13,6 +13,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        //MARTIN ADDED THIS
+        multiDexEnabled true //added this line
+
     }
 
     buildTypes {
@@ -35,4 +39,11 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // Get all AfricasTalkingLtd services
+    implementation 'com.github.AfricasTalkingLtd.africastalking-java:core:3.4.8'
+
+    //SOLVE GUAVA ERROR
+    implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
+    implementation 'androidx.multidex:multidex:2.0.1'
 }
