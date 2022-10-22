@@ -1,5 +1,10 @@
 plugins {
     id 'com.android.application'
+    id 'realm-android'
+}
+
+realm {
+    syncEnabled = true
 }
 
 android {
@@ -53,4 +58,8 @@ dependencies {
     //glider
     implementation 'com.github.bumptech.glide:glide:4.14.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+
+    //mongo
+    implementation 'io.realm:realm-gradle-plugin:10.10.1'
+    implementation 'androidx.core:core-ktx:1.9.0'
 }

@@ -15,6 +15,10 @@ import com.smarteist.autoimageslider.SliderView;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.realm.Realm;
+import io.realm.mongodb.App;
+import io.realm.mongodb.AppConfiguration;
+
 public class SplashActivity extends AppCompatActivity {
 
     private List<SliderItem> mSliderItemsList;
@@ -25,28 +29,16 @@ public class SplashActivity extends AppCompatActivity {
     String url3 = "https://www.statnews.com/wp-content/uploads/2017/04/AP17114312968121-645x645.jpg";
 
 
+    String appId="mongodbapp-rdgan";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-//
-//        SliderView sliderView = findViewById(R.id.imageSliderSC);
-//
-//        mSliderItemsList = new ArrayList<>();
-//
-//        AdapterSliderSplash adapter = new AdapterSliderSplash(this, mSliderItems);
-//
-//        sliderView.setSliderAdapter(adapter);
-//
-//        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM); //set indicator animation by using IndicatorAnimationType. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
-//        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-//        sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
-//        sliderView.setIndicatorSelectedColor(Color.WHITE);
-//        sliderView.setIndicatorUnselectedColor(Color.GRAY);
-//        sliderView.setScrollTimeInSec(4); //set scroll delay in seconds :
-//        sliderView.startAutoCycle();
 
+        Realm.init(this);
+        App app =  new App(new AppConfiguration.Builder(appId).build());
 
         // we are creating array list for storing our image urls.
         mSliderItemsList = new ArrayList<>();
