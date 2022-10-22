@@ -46,4 +46,11 @@ dependencies {
     //SOLVE GUAVA ERROR
     implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
     implementation 'androidx.multidex:multidex:2.0.1'
+
+    //autoimageslider
+    implementation 'com.github.smarteist:autoimageslider:1.4.0'
+
+    //glider
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
 }

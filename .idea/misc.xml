@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/SmartImmunization/app/src/main/res/drawable/bg_overlay.xml" value="0.144" />
         <entry key="..\:/Users/Administrator/AndroidStudioProjects/SmartImmunization/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/SmartImmunization/app/src/main/res/layout/activity_splash.xml" value="0.184375" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/SmartImmunization/app/src/main/res/layout/image_slider_layout_item.xml" value="0.1" />
       </map>
     </option>
   </component>
