@@ -65,4 +65,14 @@ dependencies {
 
     //spots dialog
     implementation 'com.github.d-max:spots-dialog:1.1@aar'
+
+    //circular imageview
+    implementation 'com.github.AtifSayings:CircularImageView:1.0.2'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //or hdodenhof
+    //implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //picture library
+    //implementation 'com.squareup.picasso:picasso:2.71828'
 }

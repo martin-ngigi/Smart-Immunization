@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
                 .build();
 
         btn_signup.setOnClickListener( e->{
-            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+            startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
         });
 
         btn_login.setOnClickListener( e->{
