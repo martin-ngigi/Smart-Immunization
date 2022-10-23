@@ -1,11 +1,12 @@
 plugins {
     id 'com.android.application'
-    id 'realm-android'
+    //id 'realm-android'
 }
 
-realm {
-    syncEnabled = true
-}
+//MARTIN ADDED THIS
+//realm {
+//    syncEnabled = true
+//}
 
 android {
     compileSdk 32
@@ -60,6 +61,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
 
     //mongo
-    implementation 'io.realm:realm-gradle-plugin:10.10.1'
-    implementation 'androidx.core:core-ktx:1.9.0'
+    //implementation 'io.realm:realm-gradle-plugin:10.11.1'
+
+    //spots dialog
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
 }

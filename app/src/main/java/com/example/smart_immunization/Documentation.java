@@ -39,5 +39,15 @@ public class Documentation {
      *
      * Get APi key and username from africasTalking
      *
+     * To use Realm, uncomment the following in build.gradle(project)
+     * 1.1 dependencies {
+     *         //classpath "io.realm:realm-gradle-plugin:10.11.1"
+     *     }
+     * 1.2 //id 'realm-android' in build.gradle(module)
+     * 1.3 //MARTIN ADDED THIS in build.gradle(module)
+     * //realm {
+     * //    syncEnabled = true
+     * //}
+     *
      * **/
 }

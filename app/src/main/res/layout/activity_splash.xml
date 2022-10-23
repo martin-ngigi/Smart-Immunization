@@ -46,6 +46,7 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
+                android:id="@+id/getStartedTv"
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:text="Let's Get Started"

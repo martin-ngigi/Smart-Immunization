@@ -2,10 +2,13 @@ package com.example.smart_immunization.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.smart_immunization.Adapters.AdapterSliderSplash;
+import com.example.smart_immunization.Constants;
 import com.example.smart_immunization.Models.SliderItem;
 import com.example.smart_immunization.R;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
@@ -14,10 +17,11 @@ import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
 import io.realm.Realm;
 import io.realm.mongodb.App;
 import io.realm.mongodb.AppConfiguration;
+ **/
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -29,17 +33,33 @@ public class SplashActivity extends AppCompatActivity {
     String url3 = "https://www.statnews.com/wp-content/uploads/2017/04/AP17114312968121-645x645.jpg";
 
 
-    String appId="mongodbapp-rdgan";
+    String appId= Constants.appID; //https://www.mongodb.com/docs/atlas/app-services/reference/find-your-project-or-app-id/
+
+    private TextView getStartedTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        getStartedTv = findViewById(R.id.getStartedTv);
 
+
+        /**
         Realm.init(this);
         App app =  new App(new AppConfiguration.Builder(appId).build());
+         **/
 
+        loadSlider();
+
+        getStartedTv.setOnClickListener(e -> {
+            startActivity(new Intent(SplashActivity.this, RegisterActivity.class));
+        });
+
+
+    }
+
+    private void loadSlider() {
         // we are creating array list for storing our image urls.
         mSliderItemsList = new ArrayList<>();
 
@@ -73,5 +93,6 @@ public class SplashActivity extends AppCompatActivity {
 
         // to start autocycle below method is used.
         sliderView.startAutoCycle();
+
     }
 }
