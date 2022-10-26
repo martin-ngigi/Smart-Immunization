@@ -1,4 +1,7 @@
 package com.example.smart_immunization.Activities;
+import com.android.volley.NetworkResponse;
+import com.android.volley.ServerError;
+import com.android.volley.toolbox.HttpHeaderParser;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,9 +31,12 @@ import com.example.smart_immunization.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
+
+import com.android.volley.toolbox.HttpHeaderParser;
 
 import dmax.dialog.SpotsDialog;
 /**
@@ -92,8 +98,8 @@ public class RegisterActivity extends AppCompatActivity {
         fname = edt_fNameR.getText().toString();
         lname = edt_lNameR.getText().toString();
         phone = edt_phone.getText().toString();
-        email = edt_phone.getText().toString();
-        password = edt_phone.getText().toString();
+        email = edt_email.getText().toString();
+        password = edt_password.getText().toString();
 
         // validating if the text field is empty or not.
         if (TextUtils.isEmpty(fname)){
@@ -139,13 +145,16 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
+
     private void postDataUsingVolley(String fname, String lname, String phone, String email, String password) {
         alertDialog.setTitle("Please wait...");
         alertDialog.setMessage("Sending registration data");
+        alertDialog.show();
 
         // url to post our data
         //String url = "http://127.0.0.1:8000/auth/signup/";
-        String url = "https://ed4e-41-80-98-18.in.ngrok.io/auth/signup/";
+        String BASE_URL = Constants.Base_Url;
+        String url = BASE_URL+"/auth/signup/";
 
 
         RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
@@ -162,10 +171,8 @@ public class RegisterActivity extends AppCompatActivity {
                     JSONObject respObj = new JSONObject(response);
 
                     //extract data from json object response
-                    //String accessToken = respObj.getString("token");
-                    String dateJoined = respObj.getString("date_joined");
-                    String id = respObj.getString("id");
-                    Toast.makeText(RegisterActivity.this, "ID: "+id+"\nDate: "+dateJoined, Toast.LENGTH_SHORT).show();
+                    String message = respObj.getString("message");
+                    Toast.makeText(RegisterActivity.this, "Response Message: "+message, Toast.LENGTH_SHORT).show();
 
                     //login
 //                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
@@ -174,21 +181,30 @@ public class RegisterActivity extends AppCompatActivity {
 
                 }
                 catch (JSONException e){
+                    //hide dialog
+                    alertDialog.dismiss();
+
+                    Log.e("VolleyError", "onErrorResponse: "+e.getMessage());
                     e.printStackTrace();
-                    Toast.makeText(RegisterActivity.this, "Error: An error occurred.\nHint: "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "1. Error: An error occurred.\nHint: "+e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                //hide dialog
+                alertDialog.dismiss();
                 //Handle errors
-                Toast.makeText(RegisterActivity.this, "Error: Failed to get response. \nHint: "+ error.getMessage(), Toast.LENGTH_SHORT).show();
+                //check for the response data in the VolleyError and parse it your self.
+                onErrorResponse2(error);
+                Log.e("VolleyError", "2. onErrorResponse: "+error.getMessage());
+                Toast.makeText(RegisterActivity.this, "2. Error: Failed to get response. \nHint: "+ error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
             protected Map<String, String> getParams() {
                 //creating a map for storing our values in key and value pair.
-                Map<String, String> params = new HashMap<>();
+                HashMap<String, String> params = new HashMap<>();
                 //passing our key and value pair to our parameters.
                 /**
                  * {
@@ -218,32 +234,123 @@ public class RegisterActivity extends AppCompatActivity {
         queue.add(request);
     }
 
+    //check for the response data in the VolleyError and parse it your self.
+    // import com.android.volley.toolbox.HttpHeaderParser;
+    public void onErrorResponse2(VolleyError error) {
+
+        // As of f605da3 the following should work
+        NetworkResponse response = error.networkResponse;
+        if (error instanceof ServerError && response != null) {
+            try {
+                String res = new String(response.data,
+                        HttpHeaderParser.parseCharset(response.headers, "utf-8"));
+                // Now you can use any deserializer to make sense of data
+                JSONObject obj = new JSONObject(res);
+                Toast.makeText(this, "Object is : "+obj.toString(), Toast.LENGTH_SHORT).show();
+                Log.i("RegisterActivity", "Object is "+obj);
+            } catch (UnsupportedEncodingException e1) {
+                // Couldn't properly decode data to string
+                e1.printStackTrace();
+                Log.e("RegisterActivity", "e1 onErrorResponse2:\nCouldn't properly decode data to string\n "+e1.getMessage());
+            } catch (JSONException e2) {
+                // returned data is not JSONObject?
+                Log.e("RegisterActivity", "e2 onErrorResponse2: \nreturned data is not JSONObject?\n"+e2.getMessage());
+                e2.printStackTrace();
+            }
+        }
+    }
+
+
     /**
-    private void createAccount() {
+    private void postDataUsingVolley(String fname, String lname, String phone, String email, String password) {
+        alertDialog.setTitle("Please wait...");
+        alertDialog.setMessage("Sending registration data");
         alertDialog.show();
 
-        //get data from ui
-        String name = edt_name.getText().toString();
-        String phone = edt_phone.getText().toString();
-        String email = edt_email.getText().toString();
-        String password = edt_password.getText().toString();
+        // url to post our data
+        //String url = "http://127.0.0.1:8000/auth/signup/";
+        String BASE_URL = "https://ed4e-41-80-98-18.in.ngrok.io";
+        String url = BASE_URL+"/auth/signup/";
 
-        app.getEmailPassword().registerUserAsync(email, password, it -> {
-            if (it.isSuccess()){
-                //success register user
+
+        RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
+
+        //post data
+        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                //hide dialog
                 alertDialog.dismiss();
-                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                startActivity(intent);
 
+                try {
+                    //parsing the response to json object to extract data from it.
+                    JSONObject respObj = new JSONObject(response);
+
+                    //extract data from json object response
+                    //String accessToken = respObj.getString("token");
+
+                    //String dateJoined = respObj.getString("date_joined");
+                    int id = respObj.getInt("id");
+                    //Toast.makeText(RegisterActivity.this, "ID: "+id+"\nDate: "+dateJoined, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Response: "+response.toString(), Toast.LENGTH_SHORT).show();
+
+                    //login
+//                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+//                    startActivity(intent);
+//                    finish();
+
+                }
+                catch (JSONException e){
+                    //hide dialog
+                    alertDialog.dismiss();
+
+                    Log.e("VolleyError", "onErrorResponse: "+e.getMessage());
+                    e.printStackTrace();
+                    Toast.makeText(RegisterActivity.this, "1. Error: An error occurred.\nHint: "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
-            else {
-                //Failed to register user
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //hide dialog
                 alertDialog.dismiss();
-                Log.e("AUTH", ""+it.getError().toString());
-                Toast.makeText(this, ""+it.getError().toString(), Toast.LENGTH_SHORT).show();
+                //Handle errors
+                Log.e("VolleyError", "2. onErrorResponse: "+error.getMessage());
+                Toast.makeText(RegisterActivity.this, "2. Error: Failed to get response. \nHint: "+ error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        });
+        }){
+            @Override
+            protected Map<String, String> getParams() {
+                //creating a map for storing our values in key and value pair.
+                HashMap<String, String> params = new HashMap<>();
+                //passing our key and value pair to our parameters.
+                /**
+                 * {
+                 *     "email": "martinwainaina002@gmail.com",
+                 *     "username": "wainaina2",
+                 *     "phone": "0797292290",
+                 *     "first_name": "Martin",
+                 *     "last_name": "Wainaina",
+                 *     "date_of_birth": "1999-11-23",
+                 *     "password": "12345678"
+                 * }
 
+                params.put("email", email);
+                params.put("username",email.replace("@gmail.com", ""));
+                params.put("phone",phone);
+                params.put("first_name",fname);
+                params.put("last_name",lname);
+                params.put("date_of_birth","");
+                params.put("password",password);
+
+                //return params
+                return params;
+            }
+        };
+
+        //make a json request
+        queue.add(request);
     }
-     **/
+    **/
+
 }
