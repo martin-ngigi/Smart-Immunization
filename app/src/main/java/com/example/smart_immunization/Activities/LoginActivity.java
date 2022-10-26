@@ -35,7 +35,7 @@ import dmax.dialog.SpotsDialog;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText edt_emailL, edt_passwordL;
+    private EditText edt_emailL, edt_passwordL, edt_phoneL;
     private Button btn_loginL,btn_signupL;
 
     private String email, password;
@@ -46,10 +46,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         edt_emailL = findViewById(R.id.edt_emailL);
         edt_passwordL = findViewById(R.id.edt_passwordL);
         btn_loginL = findViewById(R.id.btn_loginL);
         btn_signupL = findViewById(R.id.btn_signupL);
+        edt_phoneL = findViewById(R.id.edt_phoneL);
 
         dialog =new SpotsDialog.Builder()
                 .setCancelable(false)
@@ -61,6 +63,10 @@ public class LoginActivity extends AppCompatActivity {
         btn_loginL.setOnClickListener( e->{
             validateData();
             //startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+            String phone = edt_phoneL.getText().toString();
+            String email = edt_emailL.getText().toString().replace("@gmail.com", "");
+            Constants.phone = phone;
+            Constants.email = email;
         });
 
         btn_signupL.setOnClickListener( e->{
