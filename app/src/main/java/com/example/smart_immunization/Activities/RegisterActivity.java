@@ -84,7 +84,6 @@ public class RegisterActivity extends AppCompatActivity {
 
         btn_signup.setOnClickListener( e->{
             validateData();
-            //startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
         });
 
         btn_login.setOnClickListener( e->{
@@ -175,14 +174,12 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Response Message: "+message, Toast.LENGTH_SHORT).show();
 
                     //login
-//                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-//                    startActivity(intent);
-//                    finish();
+                    Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish();
 
                 }
                 catch (JSONException e){
-                    //hide dialog
-                    alertDialog.dismiss();
 
                     Log.e("VolleyError", "onErrorResponse: "+e.getMessage());
                     e.printStackTrace();
