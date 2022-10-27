@@ -39,9 +39,9 @@ public class HomeActivity extends AppCompatActivity {
         phoneTvH.setText(""+Constants.phone);
 
         //send sms
-//        String messageTxt = "Hello "+ Constants.email +"! \nWelcome to Smart-Immunization. Smart immunization is a digital form of educating the less privileged people such as the illiterate, the old and those in rural areas regarding immunization schedules, how they are carried out and after how long.";
-//        MySms mySms =  new MySms();
-//        mySms.sendSms(messageTxt);
+        String messageTxt = "Hello "+ Constants.email +"! \nWelcome to Smart-Immunization. Smart immunization is a digital form of educating the less privileged people such as the illiterate, the old and those in rural areas regarding immunization schedules, how they are carried out and after how long.";
+        MySms mySms =  new MySms();
+        mySms.sendSms(messageTxt);
 
 
         immuneLayout.setOnClickListener(e ->{
