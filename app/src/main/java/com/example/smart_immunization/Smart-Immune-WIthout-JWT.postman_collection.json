@@ -424,7 +424,7 @@
 			"response": []
 		},
 		{
-			"name": "2.4 Get all immunizations",
+			"name": "2.5 Get all immunizations",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -528,6 +528,169 @@
 					"path": [
 						"immunization2",
 						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.7  delete one immunizations by id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "Bearer test_sk_dvuXn1cc5V5oTvhnuQ4DAFW2Q",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"emp_id\": 100,\r\n        \"name\": \"Martin Wainaina\",\r\n        \"gender\": \"M\",\r\n        \"designation\": \"User Interface Design\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/immunization2/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"immunization2",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.8 update one nested users by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"immunizations\": [\r\n        {\r\n            \"id\": 1,\r\n            \"user\": 1,\r\n            \"immunizationName\": \"JSON and JSON\",\r\n            \"immunizationDosageLevel\": \"1st\",\r\n            \"immunizationDate\": \"02-11-2022\",\r\n            \"nextImmunizationDate\": \"02-12-2022\"\r\n        }\r\n    ],\r\n    \"firstName\": \"Martin3\",\r\n    \"lastName\": \"Wainaina3\",\r\n    \"email\": \"martn@gmail.com\",\r\n    \"phone\": \"079729229\",\r\n    \"password\": \"12345\",\r\n    \"username\": \"martin\",\r\n    \"gender\": \"M\",\r\n    \"age\": \"23\",\r\n    \"nationId\": \"92372\",\r\n    \"county\": \"Nairobi\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user2/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user2",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.9  Update one nested immunizations by id",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "Bearer test_sk_dvuXn1cc5V5oTvhnuQ4DAFW2Q",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"user\": 2,\r\n    \"immunizationName\": \"JSON and JSON2\",\r\n    \"immunizationDosageLevel\": \"1st\",\r\n    \"immunizationDate\": \"02-11-2022\",\r\n    \"nextImmunizationDate\": \"02-12-2022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/immunization2/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"immunization2",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.11 delete one nested users by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/user2/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user2",
+						"1",
 						""
 					]
 				}
