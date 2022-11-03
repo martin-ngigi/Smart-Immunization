@@ -21,4 +21,12 @@
         <item name="DialogSpotCount">4</item>
         <item name="android:background">@color/blue</item>
     </style>
+
+    <style name="Spinner" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:textSize">14sp</item>
+    </style>
 </resources>

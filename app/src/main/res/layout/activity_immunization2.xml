@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Activities.ImmunizationActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/black"
+                android:text="Childhood Immunization Schedule"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/black"
+                        android:text="What is Childhood Immunization Schedule?"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginStart="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="5dp"
+                        android:text="The childhood immunization schedule, or childhood vaccine schedule, is the list of common vaccines the Centers for Disease Control and Prevention (CDC) recommends most children should receive. Immunization is a way to protect your child from getting many different infections and diseases. Many of these illnesses spread easily from child to child and can cause serious health problems. They can even cause death."
+                        android:textColor="#6C6565"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/black"
+                        android:text="When should my child get immunized?"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginStart="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="5dp"
+                        android:text="Your child should receive their first doses of most vaccines during their first two years of life. They may need several doses of the vaccines to reach full protection. For example, the CDC recommends children receive their first dose of the measles, mumps and rubella (MMR) vaccine at 12 months of age or older. They should then receive a second dose before entering elementary school (about 4 to 6 years of age). Your baby can get their childhood vaccines at their regularly scheduled well-baby checkups."
+                        android:textColor="#6C6565"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/black"
+                        android:text="How many vaccines do children get?"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginStart="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="5dp"
+                        android:text="By the age of 15 months, your baby may receive up to 10 different types of vaccines. The American Academy of Pediatrics recommends all healthy babies receive these initial vaccines. Your child may receive additional doses and other vaccines between the ages of 15 months and 16 years old. If your child has a chronic condition or a weakened immune system, their pediatrician may recommend a different schedule."
+                        android:textColor="#6C6565"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- What are the different types of vaccines?-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/black"
+                        android:text="What are the different types of vaccines??"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginStart="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="5dp"
+                        android:text="The following vaccines can help protect your child from serious infection or disease."
+                        android:textColor="#6C6565"
+                        android:textSize="18sp" />
+
+                    <!-- Hepatitis B (HepB)-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:text="Hepatitis B (HepB)"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:text="The hepatitis B vaccine can help protect your child against hepatitis B. The newborn vaccine schedule includes three doses of the HepB vaccine. Your newborn will generally receive their first dose within 12 hours of birth. They’ll receive their second dose at 1 to 2 months of age and their third dose between 6 and 18 months of age. Slight variations in this schedule are possible based on the birthing parent’s hepatitis B surface antigen status and the potential use of combination vaccines."
+                            android:textColor="#6C6565"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <!-- Rotavirus (RV)-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:text="Rotavirus (RV)"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:text="The rotavirus vaccine can help protect your child against rotavirus. Rotavirus is a viral infection that can cause fever, vomiting and diarrhea. Your child will receive the rotavirus vaccine in two (Rotarix®) or three (RotaTeq®) doses, starting at age 2 months."
+                            android:textColor="#6C6565"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <!-- Diphtheria, tetanus and acellular pertussis (DTaP)-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:text="Diphtheria, tetanus and acellular pertussis (DTaP)"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:text="The DTaP vaccine can help protect your child against diphtheria, tetanus and pertussis. Baby vaccines include five doses of the DTaP combination vaccine. Your baby will receive their first dose at 2 months of age and their second at 4 months of age. They’ll receive their third dose at 6 months, their fourth dose between 15 and 18 months of age and their fifth dose between 4 and 6 years of age."
+                            android:textColor="#6C6565"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <!-- Haemophilus influenzae type b (Hib)-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:text="Haemophilus influenzae type b (Hib)"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:text="The Hib vaccine can help protect your child against the most common type of Haemophilus influenzae bacteria. Your child will receive three to four doses of the Hib vaccine, depending on the brand. They’ll receive their first dose at 2 months of age and their second dose at 4 months of age. They’ll possibly receive a third dose at 6 months of age. They’ll then receive their final dose between 12 and 15 months of age. Slight variations in this schedule are possible."
+                            android:textColor="#6C6565"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <!-- Pneumococcal conjugate (PCV13)-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:text="Pneumococcal conjugate (PCV13)"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:text="The PCV13 vaccine can help protect your child against pneumococcus bacterial infections. These infections include pneumonia and meningitis. Your child will receive four doses of the PCV13 vaccine. They’ll receive their first dose at 2 months of age and their second dose at 4 months of age. They’ll receive their third dose at 6 months of age and their fourth dose between 12 and 15 months of age."
+                            android:textColor="#6C6565"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <!-- Inactivated poliovirus (IPV)-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:text="Inactivated poliovirus (IPV)"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:text="The inactivated poliovirus (IPV) vaccine can help protect your child against infections of polio. Your child will receive four doses of the IPV vaccine. They’ll receive their first dose at 2 months of age and their second dose at 4 months of age. They’ll receive their third dose between 6 and 18 months of age and their fourth dose between 4 and 6 years of age."
+                            android:textColor="#6C6565"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <!-- Influenza-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:text="Influenza"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:text="The influenza virus vaccine can help protect your child against the flu (influenza). Your child may get the influenza vaccine each year. They may receive one or two doses. They may receive their first dose at 6 months old and their second dose at least 1 month later."
+                            android:textColor="#6C6565"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <!-- Measles, mumps and rubella (MMR)-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:text="Measles, mumps and rubella (MMR)"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:text="The measles, mumps and rubella (MMR) vaccine can help protect your child against measles, mumps and rubella. Your child will receive two doses of the MMR combination vaccine. They’ll receive their first dose between 12 and 15 months of age and their second dose between 4 and 6 years of age. The MMR vaccine may be combined with the VAR vaccine (MMRV)."
+                            android:textColor="#6C6565"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <!-- Varicella (VAR)-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:text="Varicella (VAR)"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:text="The chickenpox (varicella) vaccine can help protect your child against chickenpox. Your child will receive two doses of the varicella vaccine. They’ll receive their first dose between 12 and 15 months of age and their second dose between 4 and 6 years of age. The varicella vaccine may be combined with the MMR vaccine (MMRV)."
+                            android:textColor="#6C6565"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--What ages do kids get shots?-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                app:cardElevation="6dp"
+                app:cardCornerRadius="12dp"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="3dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textColor="@color/black"
+                        android:text="What ages do kids get shots?"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginStart="5dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="5dp"
+                        android:text="The infant vaccine schedule starts at birth. Your newborn will receive their first shots within their first months of life. Your child may receive certain vaccines within a range of ages. The following represents one recommended child vaccine schedule. Your child’s pediatrician may follow different guidelines. You should speak with your child’s pediatrician about which vaccines your child should receive and when. The recommended vaccines by age include:"
+                        android:textColor="#6C6565"
+                        android:textSize="18sp" />
+
+                    <!-- Birth vaccine-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:text="Birth vaccine"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:text="Vaccines for babies include their first doses of Hepatitis B (HepB)."
+                            android:textColor="#6C6565"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <!-- 1- to 2-month vaccine-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:text="1- to 2-month vaccine"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:text="Hepatitis B (HepB)."
+                            android:textColor="#6C6565"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <!-- 2-month vaccines -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:text="2-month vaccines"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:text="Babies get several shots at 2 months of age. The DTaP vaccine schedule starts at 2 months. Your baby will get their first dose of:
+Rotavirus (RV).
+Diphtheria, tetanus and acellular pertussis (DTaP).
+Haemophilus influenzae type B (Hib).
+Pneumococcal conjugate (PCV13).
+Inactivated poliovirus (IPV)."
+                            android:textColor="#6C6565"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <!-- 4-month vaccines-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:text="4-month vaccines-"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:text="For their 4-month shots, babies get a second dose of the vaccines they received at their 2-month appointment. These include:
+
+Rotavirus (RV).
+Diphtheria, tetanus and acellular pertussis (DTaP).
+Haemophilus influenzae type B (Hib).
+Pneumococcal conjugate (PCV13).
+Inactivated poliovirus (IPV)."
+                            android:textColor="#6C6565"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <!-- 6-month vaccines-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/black"
+                            android:text="6-month vaccines"
+                            android:textStyle="bold"
+                            android:textSize="17sp"
+                            android:layout_marginStart="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:padding="5dp"
+                            android:text="At 6 months of age, your child may start to receive the influenza vaccine annually. In addition, your child may or may not need a third dose of the RV and Hib vaccines, depending on the brand your child’s healthcare provider used for their previous doses.
+
+Influenza.
+Rotavirus (RV).
+Haemophilus influenzae type B (Hib).
+Diphtheria, tetanus and acellular pertussis (DTaP).
+Pneumococcal conjugate (PCV13)."
+                            android:textColor="#6C6565"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

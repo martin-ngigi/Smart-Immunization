@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.smart_immunization.Activities2.Register2Activity;
 import com.example.smart_immunization.Adapters.AdapterSliderSplash;
 import com.example.smart_immunization.Constants;
 import com.example.smart_immunization.Models.SliderItem;
@@ -53,7 +54,7 @@ public class SplashActivity extends AppCompatActivity {
         loadSlider();
 
         getStartedTv.setOnClickListener(e -> {
-            startActivity(new Intent(SplashActivity.this, RegisterActivity.class));
+            startActivity(new Intent(SplashActivity.this, Register2Activity.class));
         });
 
 

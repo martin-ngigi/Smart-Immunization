@@ -32,6 +32,24 @@
         <activity
             android:name=".Activities.RegisterActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".Activities2.Schedules2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities2.Immunization2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities2.Home2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities2.Login2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities2.Register2Activity"
+            android:exported="false" />
+
+
         <activity
             android:name=".Activities.SplashActivity"
             android:exported="true">

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".Activities.RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/white"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/signupImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/login"
+                android:layout_marginTop="20dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edt_fNameR"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="First Name"
+                    android:textColor="@color/blue"
+                    android:textColorHint="@color/blue"
+                    android:paddingLeft="10dp"
+                    android:background="@drawable/edt_background"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"/>
+
+                <EditText
+                    android:id="@+id/edt_lNameR"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="Last Name"
+                    android:textColor="@color/blue"
+                    android:textColorHint="@color/blue"
+                    android:paddingLeft="5dp"
+                    android:background="@drawable/edt_background"
+                    android:layout_marginRight="20dp"/>
+
+            </LinearLayout>
+
+
+
+            <EditText
+                android:id="@+id/edt_emailR"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:hint="Email"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue"
+                android:inputType="textWebEmailAddress"
+                android:paddingLeft="10dp"
+                android:background="@drawable/edt_background"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <EditText
+                android:id="@+id/edt_phoneR"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:hint="Phone"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue"
+                android:inputType="textPhonetic"
+                android:paddingLeft="10dp"
+                android:background="@drawable/edt_background"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <EditText
+                android:id="@+id/edt_ageR"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:hint="Age"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:background="@drawable/edt_background"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/idTVHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="Select Gender"
+                android:textColor="@color/blue"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/genderSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/edt_background"
+                android:theme="@style/Spinner"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:padding="20dp" />
+
+
+
+            <EditText
+                android:id="@+id/edt_nationIdR"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:hint="Nation Id"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:background="@drawable/edt_background"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <EditText
+                android:id="@+id/edt_countyR"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:hint="County"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:background="@drawable/edt_background"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <EditText
+                android:id="@+id/edt_usernameR"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:hint="Username"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:background="@drawable/edt_background"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <EditText
+                android:id="@+id/edt_passwordR"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:hint="Password"
+                android:textColor="@color/blue"
+                android:textColorHint="@color/blue"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:background="@drawable/edt_background"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <Button
+                android:id="@+id/btn_signupR"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Signup"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_background"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"/>
+
+            <Button
+                android:id="@+id/btn_loginR"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_background"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</LinearLayout>
