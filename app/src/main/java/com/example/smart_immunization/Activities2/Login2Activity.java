@@ -135,6 +135,7 @@ public class Login2Activity extends AppCompatActivity {
                         String age1 = firstObject.getString("age");
                         String nationId1 = firstObject.getString("nationId");
                         String county1 = firstObject.getString("county");
+                        int id1 = firstObject.getInt("id");
 
                         //set data
                         Constants.email= email1;
@@ -145,6 +146,7 @@ public class Login2Activity extends AppCompatActivity {
                         Constants.nationalId = nationId1;
                         Constants.county = county1;
                         Constants.first_name = firstName1;
+                        Constants.id = id1;
 
 
 
