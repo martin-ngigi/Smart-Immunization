@@ -18,6 +18,9 @@
         android:theme="@style/Theme.SmartImmunization"
         tools:targetApi="31">
         <activity
+            android:name=".Activities2.ViewImmunizationsActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities2.AddImmunizationActivity"
             android:exported="false" />
         <activity
