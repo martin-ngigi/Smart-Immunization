@@ -46,6 +46,44 @@ public class ViewImmunizationsActivity extends AppCompatActivity {
     }
 
     private void getData() {
+        /**
+         * [
+         *     {
+         *         "id": 6,
+         *         "immunizations": [
+         *             {
+         *                 "id": 4,
+         *                 "user": 6,
+         *                 "immunizationName": "Jonson",
+         *                 "immunizationDosageLevel": "2nd",
+         *                 "immunizationDate": "04_11_2022",
+         *                 "nextImmunizationDate": "18_11_2022",
+         *                 "administeredDate": "2022-11-04T13:07:57.992000Z"
+         *             },
+         *             {
+         *                 "id": 5,
+         *                 "user": 6,
+         *                 "immunizationName": "Jonson3",
+         *                 "immunizationDosageLevel": "3rd",
+         *                 "immunizationDate": "04_11_2022",
+         *                 "nextImmunizationDate": "24-11-2022",
+         *                 "administeredDate": "2022-11-04T13:10:43.852000Z"
+         *             }
+         *         ],
+         *         "firstName": "Daniel",
+         *         "lastName": "Njoroge",
+         *         "email": "daniel@gmail.com",
+         *         "phone": "0712345678",
+         *         "password": "12345678",
+         *         "username": "daniel",
+         *         "gender": "M",
+         *         "age": "22",
+         *         "nationId": "549469",
+         *         "county": "Kiambu",
+         *         "registeredDate": "2022-11-04T11:42:50.230000Z"
+         *     }
+         * ]
+         */
         RequestQueue queue = Volley.newRequestQueue(ViewImmunizationsActivity.this);
 
         StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
