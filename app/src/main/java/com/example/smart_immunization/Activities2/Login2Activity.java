@@ -21,6 +21,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.smart_immunization.Constants;
 import com.example.smart_immunization.R;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -31,8 +32,8 @@ import dmax.dialog.SpotsDialog;
 
 public class Login2Activity extends AppCompatActivity {
 
-    private EditText edt_emailL, edt_passwordL, edt_phoneL;
-    private Button btn_loginL,btn_signupL, btn_loginL2;
+    private EditText edt_emailL, edt_passwordL;
+    private Button btn_loginL,btn_signupL;
 
     private String email, password;
     private AlertDialog dialog;
@@ -47,8 +48,6 @@ public class Login2Activity extends AppCompatActivity {
         edt_passwordL = findViewById(R.id.edt_passwordL);
         btn_loginL = findViewById(R.id.btn_loginL);
         btn_signupL = findViewById(R.id.btn_signupL);
-        edt_phoneL = findViewById(R.id.edt_phoneL);
-        btn_loginL2 = findViewById(R.id.btn_loginL2);
 
         dialog =new SpotsDialog.Builder()
                 .setCancelable(false)
@@ -60,20 +59,9 @@ public class Login2Activity extends AppCompatActivity {
         btn_loginL.setOnClickListener( e->{
             validateData();
             //startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-            String phone = edt_phoneL.getText().toString();
             String email = edt_emailL.getText().toString().replace("@gmail.com", "");
-            Constants.phone = phone;
             Constants.email = email;
         });
-        btn_loginL2.setOnClickListener( e->{
-
-            String phone = edt_phoneL.getText().toString();
-            String email = edt_emailL.getText().toString().replace("@gmail.com", "");
-            Constants.phone = phone;
-            Constants.email = email;
-            startActivity(new Intent(Login2Activity.this, Home2Activity.class));
-        });
-
         btn_signupL.setOnClickListener( e->{
             startActivity(new Intent(Login2Activity.this, Register2Activity.class));
         });
@@ -83,7 +71,7 @@ public class Login2Activity extends AppCompatActivity {
     private void validateData() {
 
         email = edt_emailL.getText().toString();
-        password = edt_emailL.getText().toString();
+        password = edt_passwordL.getText().toString();
 
         // validating if the text field is empty or not.
         if (TextUtils.isEmpty(email)){
@@ -118,28 +106,61 @@ public class Login2Activity extends AppCompatActivity {
         dialog.show();
 
         String BASE_URL = Constants.Base_Url;
-        String url = BASE_URL+"/auth/login/";
+        String url = BASE_URL+"/user-by-email-or-phone/?search="+email;
 
         RequestQueue queue = Volley.newRequestQueue(Login2Activity.this);
 
         //post data
-        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 //hide dialog
                 dialog.dismiss();
 
-                try {
-                    //parsing the response to json object to extract data from it.
-                    JSONObject respObj = new JSONObject(response);
+                //Toast.makeText(Login2Activity.this, "Response: "+response.toString(), Toast.LENGTH_SHORT).show();
 
-                    //extract data from the json object response
-                    String message = respObj.getString("message");
-                    //String access =  respObj.getString("access");
-                    Toast.makeText(Login2Activity.this, "access: "+message, Toast.LENGTH_SHORT).show();
-                    //proceed to home
-                    Intent intent = new Intent(Login2Activity.this, Home2Activity.class);
-                    startActivity(intent);
+
+                try {
+                    //JSONObject respObj = new JSONObject(response);
+                    JSONArray jsonArray = new JSONArray(response);
+
+                    if (jsonArray.length() > 0){
+                        JSONObject firstObject = jsonArray.getJSONObject(0);
+                        String email1 = firstObject.getString("email");
+                        String password1 = firstObject.getString("password");
+                        String firstName1 = firstObject.getString("firstName");
+                        String lastName1 = firstObject.getString("lastName");
+                        String phone1 = firstObject.getString("phone");
+                        String username1 = firstObject.getString("username");
+                        String age1 = firstObject.getString("age");
+                        String nationId1 = firstObject.getString("nationId");
+                        String county1 = firstObject.getString("county");
+
+                        //set data
+                        Constants.email= email1;
+                        Constants.phone = phone1;
+                        Constants.last_name = lastName1;
+                        Constants.user_name = username1;
+                        Constants.age = age1;
+                        Constants.nationalId = nationId1;
+                        Constants.county = county1;
+                        Constants.first_name = firstName1;
+
+
+
+                        Toast.makeText(Login2Activity.this, "email: "+email1+ "\npassword: "+password1, Toast.LENGTH_LONG).show();
+
+                        if (email.equals(email1) && password.equals(password1)){
+                            //proceed to home
+                            Intent intent = new Intent(Login2Activity.this, Home2Activity.class);
+                            startActivity(intent);
+                        }
+                        else {
+                            Toast.makeText(Login2Activity.this, "Wrong Login credentials", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+
                 }
                 catch (JSONException e){
                     //hide dialogue
@@ -149,6 +170,7 @@ public class Login2Activity extends AppCompatActivity {
                     e.printStackTrace();
                     Toast.makeText(Login2Activity.this, "onResponse: error", Toast.LENGTH_SHORT).show();
                 }
+
             }
         }, new Response.ErrorListener() {
             @Override
@@ -157,25 +179,7 @@ public class Login2Activity extends AppCompatActivity {
                 dialog.dismiss();
                 Toast.makeText(Login2Activity.this, "VolleyError: "+error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        }){
-            @Override
-            protected Map<String, String> getParams()  {
-                //creating a map for storing values in keys and value pair
-                Map<String, String> params = new HashMap<>();
-                //passing our key and value pair to our parameters
-                /**
-                 * {
-                 *     "email": "martinwainaina002@gmail.com",
-                 *     "password": "12345678"
-                 * }
-                 * **/
-
-                params.put("email", edt_emailL.getText().toString());
-                params.put("password", edt_passwordL.getText().toString());
-
-                return params;
-            }
-        };
+        });
 
         //make a queue to json request
         queue.add(request);

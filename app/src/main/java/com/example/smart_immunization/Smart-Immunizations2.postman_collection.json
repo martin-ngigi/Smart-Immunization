@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "39e10fac-cdde-4d1e-ad51-4b9bb8bede07",
+		"name": "Smart-Immunizations2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1.1Insert User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Simon\",\r\n    \"lastName\": \"Kimani\",\r\n    \"email\": \"simon@gmail.com\",\r\n    \"phone\": \"0712345678\",\r\n    \"password\": \"123451\",\r\n    \"username\": \"simon\",\r\n    \"gender\":\"M\",\r\n    \"age\":\"12\",\r\n    \"nationId\": \"28374\",\r\n    \"county\":\"Nairobi1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.2 Insert Immunizations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"immunizationName\": \"Astrazeneka1\",\r\n    \"immunizationDosageLevel\": \"2nd1\",\r\n    \"immunizationDate\": \"03-11-2021\",\r\n    \"nextImmunizationDate\": \"03-12-2021\",\r\n    \"user\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/immunizations/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"immunizations",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.3 Get all users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Simon\",\r\n    \"lastName\": \"Kimani\",\r\n    \"email\": \"simon@gmail.com\",\r\n    \"phone\": \"0712345678\",\r\n    \"password\": \"123451\",\r\n    \"username\": \"simon\",\r\n    \"gender\":\"M\",\r\n    \"age\":\"12\",\r\n    \"nationId\": \"28374\",\r\n    \"county\":\"Nairobi1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.4 Get all immunizations",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"immunizationName\": \"Astrazeneka1\",\r\n    \"immunizationDosageLevel\": \"2nd1\",\r\n    \"immunizationDate\": \"03-11-2021\",\r\n    \"nextImmunizationDate\": \"03-12-2021\",\r\n    \"user\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/immunizations/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"immunizations",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.5 Get users by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Simon\",\r\n    \"lastName\": \"Kimani\",\r\n    \"email\": \"simon@gmail.com\",\r\n    \"phone\": \"0712345678\",\r\n    \"password\": \"123451\",\r\n    \"username\": \"simon\",\r\n    \"gender\":\"M\",\r\n    \"age\":\"12\",\r\n    \"nationId\": \"28374\",\r\n    \"county\":\"Nairobi1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.7 Update users by ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"simon\",\r\n    \"lastName\": \"Kimani\",\r\n    \"email\": \"simon@gmail.com\",\r\n    \"phone\": \"07123678\",\r\n    \"password\": \"1234\",\r\n    \"username\": \"simon\",\r\n    \"gender\":\"M\",\r\n    \"age\":\"12\",\r\n    \"nationId\": \"28374\",\r\n    \"county\":\"Nairobi1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.8 delete users by ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"simon\",\r\n    \"lastName\": \"Kimani\",\r\n    \"email\": \"simon@gmail.com\",\r\n    \"phone\": \"07123678\",\r\n    \"password\": \"1234\",\r\n    \"username\": \"simon\",\r\n    \"gender\":\"M\",\r\n    \"age\":\"12\",\r\n    \"nationId\": \"28374\",\r\n    \"county\":\"Nairobi1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.5 Get immunizations by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"immunizationName\": \"Astrazeneka1\",\r\n    \"immunizationDosageLevel\": \"2nd1\",\r\n    \"immunizationDate\": \"03-11-2021\",\r\n    \"nextImmunizationDate\": \"03-12-2021\",\r\n    \"user\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/immunizations/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"immunizations",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.5 Search one users by email",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Simon1\",\r\n    \"lastName\": \"Kimani\",\r\n    \"email\": \"simon@gmail.com\",\r\n    \"phone\": \"0712345678\",\r\n    \"password\": \"123451\",\r\n    \"username\": \"simon\",\r\n    \"gender\":\"M\",\r\n    \"age\":\"12\",\r\n    \"nationId\": \"28374\",\r\n    \"county\":\"Nairobi1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/user-by-email-or-phone?search=leah@gmail.com",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user-by-email-or-phone"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "leah@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.5 Search immunizations by name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"immunizationName\": \"Astrazeneka1\",\r\n    \"immunizationDosageLevel\": \"2nd1\",\r\n    \"immunizationDate\": \"03-11-2021\",\r\n    \"nextImmunizationDate\": \"03-12-2021\",\r\n    \"user\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/immunization-by-name/?search=jonson",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"immunization-by-name",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "jonson"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

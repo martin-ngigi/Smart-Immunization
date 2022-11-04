@@ -27,7 +27,7 @@ public class Home2Activity extends AppCompatActivity {
         immuneLayout = findViewById(R.id.immuneLayout);
         upcomingLayout = findViewById(R.id.upcomingLayout);
 
-        nameTvH.setText(""+Constants.email.replace("@gmail.com", ""));
+        nameTvH.setText(""+Constants.first_name+' '+Constants.last_name);
         phoneTvH.setText(""+Constants.phone);
 
         //send sms

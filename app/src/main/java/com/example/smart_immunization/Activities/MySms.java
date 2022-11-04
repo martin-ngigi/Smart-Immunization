@@ -24,8 +24,8 @@ public class MySms {
         StrictMode.ThreadPolicy gfgPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(gfgPolicy);
 
-        String username = "immuno";
-        String apiKey = "daf34abdb82da422d49c9c3b5fe1083d13cd47fc811766924f33601d706a3b7a";//africastalking.com
+        String username = "";
+        String apiKey = "";//africastalking.com
         AfricasTalking.initialize(username, apiKey);
         // Initialize a service e.g. SMS
         SmsService sms = AfricasTalking.getService(AfricasTalking.SERVICE_SMS);

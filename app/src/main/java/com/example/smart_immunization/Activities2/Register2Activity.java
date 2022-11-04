@@ -197,9 +197,8 @@ public class Register2Activity extends AppCompatActivity implements AdapterView.
 
         // url to post our data
         //String url = "http://127.0.0.1:8000/user2/";
-        //String BASE_URL = Constants.Base_Url;
-        //String url = BASE_URL+"/user2/";
-        String url = "https://e9f5-41-80-97-89.in.ngrok.io/user2/";
+        String BASE_URL = Constants.Base_Url;
+        String url = BASE_URL+"/users/";
 
 
         RequestQueue queue = Volley.newRequestQueue(Register2Activity.this);
@@ -221,7 +220,7 @@ public class Register2Activity extends AppCompatActivity implements AdapterView.
                     Toast.makeText(Register2Activity.this, "Response Message: "+message, Toast.LENGTH_SHORT).show();
 
                     //login
-                    Intent intent = new Intent(Register2Activity.this, Home2Activity.class);
+                    Intent intent = new Intent(Register2Activity.this, Login2Activity.class);
                     startActivity(intent);
                     finish();
 
